@@ -1,3 +1,10 @@
+/*!
+ * {plugin name}
+ * @version {version}
+ * @author  {author}
+ * @url     {url}
+ * @license {license}
+ */
 jQuery(document).ready(function(){
 
   var trigger = $(".js-trigger");

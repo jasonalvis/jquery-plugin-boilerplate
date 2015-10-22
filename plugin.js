@@ -1,50 +1,46 @@
-/**
- * Plugin
- * @version 1.0.0
- * @author Jason Alvis
- * @website http://jasonalvis.co.uk
- * @license The MIT License (MIT)
- * @basedoff Highly configurable mutable plugin boilerplate
- * https://github.com/jquery-boilerplate/jquery-patterns/blob/master/patterns/jquery.highly-configurable.plugin.boilerplate.js
+/*!
+ * {plugin name}
+ * @version {version}
+ * @author  {author}
+ * @url     {url}
+ * @license {license}
  */
 ;(function( $, window, document, undefined ){
   "use strict";
 
   /**
    * Plugin constructor
-   * @public
-   * @param {HTMLElement|jQuery} element - The element to create the plugin for.
-   * @param {Object} [options] - The options
+   * @param {HTMLElement|jQuery} element - The element to create the affix for
+   * @param {Object} options             - The options
    */
   var Plugin = function( element, options ){
     /**
-     * Plugin DOM element
-     * @public
+     * DOM plugin element
+     * @type {Object}
      */
     this.element = element;
 
     /**
-     * Plugin DOM element wrapped in jQuery
-     * @public
+     * DOM plugin element wrapped in jQuery
+     * @type {Object}
      */
     this.$element = $(element);
 
     /**
      * Current options
-     * @public
+     * @type {Object}
      */
     this.options = options;
 
     /**
-     * Plugin init
-     * @public
+     * Init
      */
     this.init();
   };
 
   /**
-   * Default options for the plugin
-   * @public
+   * Default options
+   * @type {Object}
    */
   Plugin.prototype.defaults = {
     message: "Hello world!",
@@ -53,8 +49,8 @@
   };
 
   /**
-   * Init the plugin
-   * @public
+   * Init the affix
+   * @return {Object}
    */
   Plugin.prototype.init = function() {
     // Introduce defaults that can be extended either
@@ -78,7 +74,7 @@
 
   /**
    * Sample method
-   * @public
+   * @type {Function}
    */
   Plugin.prototype.sampleMethod = function() {
     // eg. show the currently configured message
@@ -86,13 +82,15 @@
   };
 
   /**
-   * Create a shortened reference point for our defaults
+   * Create a shorthand reference point for our defaults
+   * @type {Object}
    */
   Plugin.defaults = Plugin.prototype.defaults;
 
   /**
-   * The jQuery plugin interface
-   * @public
+   * jQuery Plugin interface
+   * @param  {Object} options - The options
+   * @return {Object}         - The plugin object
    */
   $.fn.plugin = function(options) {
     var args = Array.prototype.slice.call(arguments, 1);
